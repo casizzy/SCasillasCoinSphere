@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.stellacr.scasillascoinsphere.ui.theme.SCasillasCoinSphereTheme
+import com.stellacr.scasillascoinsphere.ui.theme.HomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
