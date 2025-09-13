@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -88,8 +90,8 @@ fun HomeScreen(){
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text("#", modifier = Modifier.width(32.dp), color = TextDim, fontWeight = FontWeight.SemiBold)
-            Text("Name", modifier = Modifier.weight(1f), color = TextDim, fontWeight = FontWeight.SemiBold)
-            Text("Price", color = TextDim, fontWeight = FontWeight.SemiBold)
+            Text("Name", modifier = Modifier.width(width = 200.dp), color = TextDim, fontWeight = FontWeight.SemiBold)
+            Text("Price", color = TextDim, modifier = Modifier.widthIn(min = 90.dp), fontWeight = FontWeight.SemiBold)
         }
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -104,7 +106,8 @@ fun HomeScreen(){
         Spacer(modifier = Modifier.height(8.dp))
 
         LazyColumn(
-            verticalArrangement = Arrangement.spacedBy(12.dp)
+            verticalArrangement = Arrangement.spacedBy(6.dp),
+            contentPadding = PaddingValues(bottom = 16.dp)
         ) {
             itemsIndexed(listaCrypto) { indice, crypto ->
                 ItemCrypto(posicion = indice + 1, crypto = crypto)
@@ -158,7 +161,7 @@ fun ItemCrypto(posicion: Int, crypto: CryptoM) {
         Text(
             text = crypto.nombre,
             color = TextMain,
-            modifier = Modifier.weight(1f)
+            modifier = Modifier.width(width = 156.dp)
         )
 
         Text(
