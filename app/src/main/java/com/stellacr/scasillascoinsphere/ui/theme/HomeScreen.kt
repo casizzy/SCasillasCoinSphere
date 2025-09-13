@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -20,9 +21,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
 
 val Background = Color(0xFF0B1020)
 val Surface = Color(0xFF151B2E)
@@ -69,9 +72,9 @@ fun HomeScreen(){
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Card(titulo = "Capitalización Global", valor = "$2.18T")
-        Card(titulo = "Índice de Miedo y Codicia", valor = "Neutral (54)")
-        Card(titulo = "Temporada de Altcoins", valor = "No")
+        Card(titulo = "Global Market Cap", valor = "$2.18T")
+        Card(titulo = "Fear & Greed", valor = "Neutral (54)")
+        Card(titulo = "Altcoin Season", valor = "No")
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -118,7 +121,12 @@ fun ItemCrypto(posicion: Int, crypto: CryptoM) {
 
         Spacer(modifier = Modifier.width(8.dp))
 
-        //imagen
+        AsyncImage(
+            model = crypto.urlImagen,
+            contentDescription = crypto.nombre,
+            modifier = Modifier.size(32.dp),
+            contentScale = ContentScale.Crop
+        )
 
         Spacer(modifier = Modifier.width(12.dp))
 
