@@ -1,6 +1,7 @@
 package com.stellacr.scasillascoinsphere.ui.theme
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -72,16 +73,41 @@ fun HomeScreen(){
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Card(titulo = "Global Market Cap", valor = "$2.18T")
-        Card(titulo = "Fear & Greed", valor = "Neutral (54)")
-        Card(titulo = "Altcoin Season", valor = "No")
+        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            Card(titulo = "Global Market Cap", valor = "$2.18T")
+            Card(titulo = "Fear & Greed", valor = "Neutral (54)")
+            Card(titulo = "Altcoin Season", valor = "No")
+        }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
-        LazyColumn {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 8.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text("#", modifier = Modifier.width(32.dp), color = TextDim, fontWeight = FontWeight.SemiBold)
+            Text("Name", modifier = Modifier.weight(1f), color = TextDim, fontWeight = FontWeight.SemiBold)
+            Text("Price", color = TextDim, fontWeight = FontWeight.SemiBold)
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(1.dp)
+                .background(TextDim.copy(alpha = 0.3f))
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        LazyColumn(
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
             itemsIndexed(listaCrypto) { indice, crypto ->
                 ItemCrypto(posicion = indice + 1, crypto = crypto)
-                Spacer(modifier = Modifier.height(8.dp))
             }
         }
     }
@@ -92,9 +118,8 @@ fun Card(titulo: String, valor: String) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Surface, shape = RoundedCornerShape(12.dp))
-            .padding(16.dp)
-            .padding(bottom = 10.dp)
+            .background(Surface, shape = RoundedCornerShape(18.dp))
+            .padding(15.dp)
     ) {
         Column {
             Text(titulo, color = TextDim, style = MaterialTheme.typography.bodySmall)
@@ -108,8 +133,8 @@ fun ItemCrypto(posicion: Int, crypto: CryptoM) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Surface, shape = RoundedCornerShape(12.dp))
-            .padding(12.dp),
+            .background(Surface, shape = RoundedCornerShape(18.dp))
+            .padding(10.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
