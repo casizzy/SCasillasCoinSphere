@@ -58,7 +58,8 @@ fun HomeScreen(){
         CryptoM("Solana", "$201.8500", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/sol.png"),
         CryptoM("USDC", "$0.9998", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/usdc.png"),
         CryptoM("Dogecoin", "$0.1320", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/doge.png"),
-        CryptoM("TRON", "$0.3630", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/trx.png")
+        CryptoM("TRON", "$0.3630", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/trx.png"),
+        CryptoM("Avalanche", "$43.87", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/avax.png")
     )
 
     Column(
