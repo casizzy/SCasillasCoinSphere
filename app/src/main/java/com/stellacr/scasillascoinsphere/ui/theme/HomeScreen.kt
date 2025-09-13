@@ -50,15 +50,15 @@ fun SCasillasCoinSphereTheme(content: @Composable () -> Unit) {
 @Composable
 fun HomeScreen(){
     val listaCrypto = listOf(
-        CryptoM("Bitcoin", "$109,797.37", "https://cryptologos.cc/logos/bitcoin-btc-logo.png"),
-        CryptoM("Ethereum", "$4,321.21", "https://cryptologos.cc/logos/ethereum-eth-logo.png"),
-        CryptoM("Tether", "$1.0000", "https://cryptologos.cc/logos/tether-usdt-logo.png"),
-        CryptoM("XRP", "$2.8100", "https://cryptologos.cc/logos/xrp-xrp-logo.png"),
-        CryptoM("BNB", "$845.00", "https://cryptologos.cc/logos/bnb-bnb-logo.png"),
-        CryptoM("Solana", "$201.85", "https://cryptologos.cc/logos/solana-sol-logo.png"),
-        CryptoM("USDC", "$0.9998", "https://cryptologos.cc/logos/usd-coin-usdc-logo.png"),
-        CryptoM("Dogecoin", "$0.1320", "https://cryptologos.cc/logos/dogecoin-doge-logo.png"),
-        CryptoM("TRON", "$0.3630", "https://cryptologos.cc/logos/tron-trx-logo.png")
+        CryptoM("Bitcoin", "$109,797.37", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/btc.png"),
+        CryptoM("Ethereum", "$4,321.21", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/eth.png"),
+        CryptoM("Tether", "$1.0000", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/usdt.png"),
+        CryptoM("XRP", "$2.8100", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/xrp.png"),
+        CryptoM("BNB", "$845.0000", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/bnb.png"),
+        CryptoM("Solana", "$201.8500", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/sol.png"),
+        CryptoM("USDC", "$0.9998", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/usdc.png"),
+        CryptoM("Dogecoin", "$0.1320", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/doge.png"),
+        CryptoM("TRON", "$0.3630", "https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/128/color/trx.png")
     )
 
     Column(
@@ -66,6 +66,8 @@ fun HomeScreen(){
             .fillMaxSize()
             .padding(16.dp)
     ) {
+        Spacer(modifier = Modifier.height(24.dp))
+
         Text(
             text = "CoinSphere",
             color = TextMain,
